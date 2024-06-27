@@ -332,7 +332,10 @@ export default function Home() {
   console.log(cliente)
   function calculator(e) {
     e.preventDefault()
-
+    if (user === null || user === undefined) {
+      router.push('/Login')
+      return
+    }
     console.log(selectValue)
     console.log(inputRef.current.value)
     console.log(inputRef2.current.value)
@@ -343,6 +346,10 @@ export default function Home() {
   }
   function calculatorFCL(e) {
     e.preventDefault()
+    if( user === null || user === undefined  ) {
+      router.push('/Login')
+      return
+      }
     console.log(inputRef.current.value)
     console.log(inputRef2.current.value)
     let val = Object.values(cliente.priceFCL).filter((i) => {
