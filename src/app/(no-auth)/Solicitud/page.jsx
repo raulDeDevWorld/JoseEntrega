@@ -2,7 +2,7 @@
 
 'use client';
 import { useUser } from '@/context/Context'
-import { useEffect, useState,useRef } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { onAuth, signInWithEmail, writeUserData, removeData } from '@/firebase/utils'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -33,20 +33,20 @@ function CotizacionTerrestre() {
 
     const sendEmail = (e) => {
         e.preventDefault();
-    
+
         emailjs
-          .sendForm('service_lu2j0u6', 'template_go8elcc', form.current, {
-            publicKey: 'dLkt6jdeg5n5DEnKs',
-          })
-          .then(
-            () => {
-              console.log('SUCCESS!');
-            },
-            (error) => {
-              console.log('FAILED...', error.text);
-            },
-          );
-      };
+            .sendForm('service_lu2j0u6', 'template_go8elcc', form.current, {
+                publicKey: 'dLkt6jdeg5n5DEnKs',
+            })
+            .then(
+                () => {
+                    console.log('SUCCESS!');
+                },
+                (error) => {
+                    console.log('FAILED...', error.text);
+                },
+            );
+    };
 
 
 
@@ -289,6 +289,39 @@ function CotizacionTerrestre() {
 
     console.log(userDB)
 
+
+        // async function startCapture(displayMediaOptions) {
+        //     let captureStream = null;
+
+        //     try {
+        //       captureStream =
+        //         await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
+        //         console.log(captureStream)
+        //     } catch (err) {
+        //       console.error(`Error: ${err}`);
+        //     }
+        //     return captureStream;
+        //   }
+
+        //   startCapture()
+
+
+
+//   function genPDF()
+//   {
+//    html2canvas(document.body,{
+//    onrendered:function(canvas){
+
+//    var img=canvas.toDataURL("image/png");
+//    var doc = new jsPDF();
+//    doc.addImage(img,'JPEG',20,20);
+//    doc.save('test.pdf');
+//    }
+
+//    });
+
+//   }
+//   genPDF()
     useEffect(() => {
 
 
@@ -349,14 +382,14 @@ function CotizacionTerrestre() {
                     </div>
                     <div className={'space-y-6'}>
                         <div>
-                            <label  htmlFor=""  className={'block relative bg-[#ffb834] text-center text-white my-3 p-2'}>PARTES DE LA TRASACCIÓN / PARTIES TO TRANSACTION</label>
+                            <label htmlFor="" className={'block relative bg-[#ffb834] text-center text-white my-3 p-2'}>PARTES DE LA TRASACCIÓN / PARTIES TO TRANSACTION</label>
                             <div className={'flex justify-around '}>
                                 <div><input type="checkbox" className={'mr-5'} name="" id="" /><span>Yes</span></div>
                                 <div><input type="checkbox" className={'mr-5'} name="" id="" /><span>No</span></div>
                             </div>
                         </div>
                     </div>
-                    <div className={'relative bg-[#00195c] text-center text-white my-3 p-2'}>DOCUMENTOS INCLUIDOS CON EL ENVIO <span  className={'inline-block w-[50px] bg-green-500 text-white'} onClick={() => handlerCounterFour('pluss')}>+</span> <span className={'inline-block w-[50px] bg-red-500 text-white'} onClick={() => handlerCounterFour('less')}>-</span></div>
+                    <div className={'relative bg-[#00195c] text-center text-white my-3 p-2'}>DOCUMENTOS INCLUIDOS CON EL ENVIO <span className={'inline-block w-[50px] bg-green-500 text-white'} onClick={() => handlerCounterFour('pluss')}>+</span> <span className={'inline-block w-[50px] bg-red-500 text-white'} onClick={() => handlerCounterFour('less')}>-</span></div>
 
                     {
                         excluye.map((i, index) => {
@@ -379,14 +412,14 @@ function CotizacionTerrestre() {
                     </div>
                     <div className={'space-y-6'}>
                         <div>
-                            <label  htmlFor=""  className={'block relative bg-[#ffb834] text-center text-white my-3 p-2'}>RUTA DE EXPORTACION TRAZADA</label>
+                            <label htmlFor="" className={'block relative bg-[#ffb834] text-center text-white my-3 p-2'}>RUTA DE EXPORTACION TRAZADA</label>
                             <div className={'flex justify-around '}>
                                 <div><input type="checkbox" className={'mr-5'} name="" id="" /><span>Yes</span></div>
                                 <div><input type="checkbox" className={'mr-5'} name="" id="" /><span>No</span></div>
                             </div>
                         </div>
                         <div>
-                            <label  htmlFor=""  className={'block relative bg-[#ffb834] text-center text-white my-3 p-2'}>SERVICIOS REQUERIDOS</label>
+                            <label htmlFor="" className={'block relative bg-[#ffb834] text-center text-white my-3 p-2'}>SERVICIOS REQUERIDOS</label>
                             <div className={'flex justify-around '}>
                                 <div><input type="checkbox" className={'mr-5'} name="" id="" /><span>Puerto a puerto</span></div>
                                 <div><input type="checkbox" className={'mr-5'} name="" id="" /><span>Puerto a puerta</span></div>
@@ -395,20 +428,20 @@ function CotizacionTerrestre() {
                             </div>
                         </div>
                         <div>
-                            <label  htmlFor=""  className={'block relative bg-[#ffb834] text-center text-white my-3 p-2'}>CARGA PELIGROSA</label>
+                            <label htmlFor="" className={'block relative bg-[#ffb834] text-center text-white my-3 p-2'}>CARGA PELIGROSA</label>
                             <div className={'flex justify-around justify-around'}>
                                 <div><input type="checkbox" className={'mr-5'} name="" id="" /><span>Si</span></div>
                                 <div><input type="checkbox" className={'mr-5'} name="" id="" /><span>No</span></div>
                             </div>
                         </div>
                         <div>
-                            <label  htmlFor=""  className={'block relative bg-[#ffb834] text-center text-white my-3 p-2'}>CARGA DE CREDITO ?</label>
+                            <label htmlFor="" className={'block relative bg-[#ffb834] text-center text-white my-3 p-2'}>CARGA DE CREDITO ?</label>
                             <div className={'flex justify-around '}>
                                 <div><input type="checkbox" className={'mr-5'} name="" id="" /><span>Si</span></div>
                                 <div><input type="checkbox" className={'mr-5'} name="" id="" /><span>No</span></div>
                             </div>                        </div>
                         <div>
-                            <label  htmlFor=""  className={'block relative bg-[#ffb834] text-center text-white my-3 p-2'}>MODALIDAD DE TRANSPORTE</label>
+                            <label htmlFor="" className={'block relative bg-[#ffb834] text-center text-white my-3 p-2'}>MODALIDAD DE TRANSPORTE</label>
                             <div className={'flex justify-around '}>
                                 <div><input type="checkbox" className={'mr-5'} name="" id="" /><span>Aerea</span></div>
                                 <div><input type="checkbox" className={'mr-5'} name="" id="" /><span>Maritima</span></div>

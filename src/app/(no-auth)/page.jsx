@@ -372,9 +372,11 @@ export default function Home() {
   console.log(user)
 
   function calcularVenc() {
-var i = new Date('2024-06-20')
-var h = new Date()
-}
+    var i = new Date('2024,07,28')
+    var h = new Date()
+    i < h & console.log('vencido')
+  }
+  calcularVenc()
   return (
     <main className={`relative h-screen w-screen `} onClick={reset} id='inicio'>
       <section className='relative '>
@@ -551,9 +553,9 @@ var h = new Date()
                       <button type="submit" className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-[12px]  px-5 py-2.5 text-center" onClick={() => setCalcValueFCL('NO DATA')}>Volver a calcular</button>
                       <button type="submit" className="w-full text-white bg-green-500 hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-[12px]  px-5 py-2.5 text-center" onClick={HandlerCheckOut}>Solicitar Servicio</button>
                     </div>
-<br />
+                    <br />
                     <div>
-                      Fecha maxima de vigencia de cotizacion: {item.VALIDEZ.split('-').reverse().map((e)=> e+'/')}
+                      Fecha maxima de vigencia de cotizacion: {item.VALIDEZ.split('-').reverse().map((e) => e + '/')}
                     </div>
                   </div>
 
